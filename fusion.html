@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>융합인재관</title>
+
+  <style>
+
+    body{
+      text-align:center;
+      font-family:sans-serif;
+      background:#f2f2f2;
+    }
+
+    img{
+      width:80%;
+      border-radius:10px;
+      margin-top:20px;
+    }
+
+    button{
+      padding:10px 20px;
+      margin:10px;
+      font-size:16px;
+      cursor:pointer;
+      border:none;
+      border-radius:10px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<h1>융합인재관 층별 안내</h1>
+
+<img id="fusionImage"
+     src="images/fusion-1.png">
+
+<br>
+
+<button onclick="changeFusion('images/fusion-1.png')">
+1층
+</button>
+
+<button onclick="changeFusion('images/fusion-2.png')">
+2층
+</button>
+
+<button onclick="changeFusion('images/fusion-3.png')">
+3층
+</button>
+
+<script>
+
+function changeFusion(image){
+
+  document.getElementById("fusionImage").src =
+    image;
+
+}
+
+</script>
+
+</body>
+</html>

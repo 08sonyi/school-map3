@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>글로벌관</title>
+
+  <style>
+
+    body{
+      text-align:center;
+      font-family:sans-serif;
+      background:#f2f2f2;
+    }
+
+    img{
+      width:80%;
+      border-radius:10px;
+      margin-top:20px;
+    }
+
+    button{
+      padding:10px 20px;
+      margin:10px;
+      font-size:16px;
+      cursor:pointer;
+      border:none;
+      border-radius:10px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<h1>글로벌관 층별 안내</h1>
+
+<img id="floorImage"
+     src="images/global-1.png">
+
+<br>
+
+<button onclick="changeFloor('images/global-1.png')">
+1층
+</button>
+
+<button onclick="changeFloor('images/global-2.png')">
+2층
+</button>
+
+<button onclick="changeFloor('images/global-3.png')">
+3층
+</button>
+
+<button onclick="changeFloor('images/global-4.png')">
+4층
+</button>
+
+<script>
+
+function changeFloor(image){
+
+  document.getElementById("floorImage").src =
+    image;
+
+}
+
+</script>
+
+</body>
+</html>
