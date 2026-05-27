@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>홍천여고 지도</title>
+
+  <style>
+    body {
+      text-align: center;
+      background-color: #f2f2f2;
+      font-family: sans-serif;
+    }
+
+    img {
+      width: 80%;
+      margin-top: 20px;
+    }
+    button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+}
+  </style>
+  
+</head>
+
+<body>
+
+  <h1>홍천여고 지도</h1>
+
+  <img src="images/1.png">
+
+  <br><br>
+
+<a href="main.html">
+  <button>본관</button>
+</a>
+<a href="global.html">
+  <button>글로벌관</button>
+</a>
+<a href="fusion.html">
+  <button>융합인재관</button>
+</a>
+
+<h2>길안내</h2>
+
+<select id="start">
+
+  <option>출발 위치 선택</option>
+
+  <!-- 글로벌관 -->
+  <option>가사실</option>
+  <option>통합교육지원실</option>
+  <option>위클래스</option>
+
+  <option>기숙사자습실</option>
+  <option>기숙사부</option>
+
+  <option>1학년 5반·6반</option>
+  <option>드림쉼터</option>
+  <option>컴퓨터실</option>
+
+  <option>1학년 1반~4반</option>
+
+  <!-- 융합인재관 -->
+  <option>급식실</option>
+
+  <option>과학1실</option>
+  <option>과학2실</option>
+  <option>과학3실</option>
+  <option>과학부</option>
+  <option>교무실4</option>
+  <option>자치회실</option>
+  <option>과학미디어센터</option>
+
+  <option>미술실</option>
+  <option>다목적실3</option>
+  <option>스터디카페</option>
+  <option>외국어학습실습실</option>
+
+  <!-- 본관 -->
+  <option>교무실1</option>
+  <option>교장실</option>
+  <option>교감실</option>
+  <option>행정실</option>
+  <option>보건실</option>
+  <option>컴퓨터실1</option>
+
+  <option>2학년 1반~3반</option>
+  <option>교무실2</option>
+  <option>2학년 4반~6반</option>
+  <option>다목적실1</option>
+  <option>채움홀</option>
+
+  <option>도서관열람실</option>
+  <option>소회의실</option>
+  <option>대회의실</option>
+  <option>방송실</option>
+  <option>교무실3</option>
+  <option>야자실</option>
+
+  <option>3학년 1반~4반</option>
+  <option>3학년부</option>
+  <option>3학년 5반~6반</option>
+  <option>다목적실2</option>
+
+</select>
+
+<br><br>
+
+<select id="end">
+
+  <option>도착 위치 선택</option>
+
+  <!-- 글로벌관 -->
+  <option>가사실</option>
+  <option>통합교육지원실</option>
+  <option>위클래스</option>
+
+  <option>기숙사자습실</option>
+  <option>기숙사부</option>
+
+  <option>1학년 5반·6반</option>
+  <option>드림쉼터</option>
+  <option>컴퓨터실</option>
+
+  <option>1학년 1반~4반</option>
+
+  <!-- 융합인재관 -->
+  <option>급식실</option>
+
+  <option>과학1실</option>
+  <option>과학2실</option>
+  <option>과학3실</option>
+  <option>과학부</option>
+  <option>교무실4</option>
+  <option>자치회실</option>
+  <option>과학미디어센터</option>
+
+  <option>미술실</option>
+  <option>다목적실3</option>
+  <option>스터디카페</option>
+  <option>외국어학습실습실</option>
+
+  <!-- 본관 -->
+  <option>교무실1</option>
+  <option>교장실</option>
+  <option>교감실</option>
+  <option>행정실</option>
+  <option>보건실</option>
+  <option>컴퓨터실1</option>
+
+  <option>2학년 1반~3반</option>
+  <option>교무실2</option>
+  <option>2학년 4반~6반</option>
+  <option>다목적실1</option>
+  <option>채움홀</option>
+
+  <option>도서관열람실</option>
+  <option>소회의실</option>
+  <option>대회의실</option>
+  <option>방송실</option>
+  <option>교무실3</option>
+  <option>야자실</option>
+
+  <option>3학년 1반~4반</option>
+  <option>3학년부</option>
+  <option>3학년 5반~6반</option>
+  <option>다목적실2</option>
+
+</select>
+
+<br><br>
+
+<button onclick="guide()">길안내 시작</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function guide() {
+
+  const placeInfo = {
+
+    /* 글로벌관 */
+
+    "가사실": {
+      building: "글로벌관",
+      floor: 1
+    },
+
+    "통합교육지원실": {
+      building: "글로벌관",
+      floor: 1
+    },
+
+    "위클래스": {
+      building: "글로벌관",
+      floor: 1
+    },
+
+    "기숙사자습실": {
+      building: "글로벌관",
+      floor: 2
+    },
+
+    "기숙사부": {
+      building: "글로벌관",
+      floor: 2
+    },
+
+    "1학년 5반·6반": {
+      building: "글로벌관",
+      floor: 3
+    },
+
+    "드림쉼터": {
+      building: "글로벌관",
+      floor: 3
+    },
+
+    "컴퓨터실": {
+      building: "글로벌관",
+      floor: 3
+    },
+
+    "1학년 1반~4반": {
+      building: "글로벌관",
+      floor: 4
+    },
+
+    /* 융합인재관 */
+
+    "급식실": {
+      building: "융합인재관",
+      floor: 1
+    },
+
+    "과학1실": {
+      building: "융합인재관",
+      floor: 2
+    },
+
+    "과학2실": {
+      building: "융합인재관",
+      floor: 2
+    },
+
+    "과학3실": {
+      building: "융합인재관",
+      floor: 2
+    },
+
+    "과학부": {
+      building: "융합인재관",
+      floor: 2
+    },
+
+    "교무실4": {
+      building: "융합인재관",
+      floor: 2
+    },
+
+    "자치회실": {
+      building: "융합인재관",
+      floor: 2
+    },
+
+    "과학미디어센터": {
+      building: "융합인재관",
+      floor: 2
+    },
+
+    "미술실": {
+      building: "융합인재관",
+      floor: 3
+    },
+
+    "다목적실3": {
+      building: "융합인재관",
+      floor: 3
+    },
+
+    "스터디카페": {
+      building: "융합인재관",
+      floor: 3
+    },
+
+    "외국어학습실습실": {
+      building: "융합인재관",
+      floor: 3
+    },
+
+    /* 본관 1층 */
+
+    "교무실1": {
+      building: "본관",
+      floor: 1
+    },
+
+    "교장실": {
+      building: "본관",
+      floor: 1
+    },
+
+    "교감실": {
+      building: "본관",
+      floor: 1
+    },
+
+    "행정실": {
+      building: "본관",
+      floor: 1
+    },
+
+    "보건실": {
+      building: "본관",
+      floor: 1
+    },
+
+    "컴퓨터실1": {
+      building: "본관",
+      floor: 1
+    },
+
+    "2학년 1반~3반": {
+      building: "본관",
+      floor: 1
+    },
+
+    "교무실2": {
+      building: "본관",
+      floor: 1
+    },
+
+    "2학년 4반~6반": {
+      building: "본관",
+      floor: 1
+    },
+
+    "다목적실1": {
+      building: "본관",
+      floor: 1
+    },
+
+    "채움홀": {
+      building: "본관",
+      floor: 1
+    },
+
+    /* 본관 2층 */
+
+    "도서관열람실": {
+      building: "본관",
+      floor: 2
+    },
+
+    "소회의실": {
+      building: "본관",
+      floor: 2
+    },
+
+    "대회의실": {
+      building: "본관",
+      floor: 2
+    },
+
+    "방송실": {
+      building: "본관",
+      floor: 2
+    },
+
+    "교무실3": {
+      building: "본관",
+      floor: 2
+    },
+
+    "야자실": {
+      building: "본관",
+      floor: 2
+    },
+
+    "3학년 1반~4반": {
+      building: "본관",
+      floor: 2
+    },
+
+    "3학년부": {
+      building: "본관",
+      floor: 2
+    },
+
+    "3학년 5반~6반": {
+      building: "본관",
+      floor: 2
+    },
+
+    "다목적실2": {
+      building: "본관",
+      floor: 2
+    }
+
+  };
+
+  const start =
+    document.getElementById("start").value;
+
+  const end =
+    document.getElementById("end").value;
+
+  const startInfo =
+    placeInfo[start];
+
+  const endInfo =
+    placeInfo[end];
+
+  let result = "";
+
+  if (
+    startInfo.building ===
+    endInfo.building
+  ) {
+
+    if (
+      startInfo.floor ===
+      endInfo.floor
+    ) {
+
+     result =
+"같은 층입니다. 복도를 따라 이동하세요. 자세한 위치는 해당 건물 지도에서 확인해주세요.";
+
+    }
+
+    else {
+
+      result =
+  "같은 건물입니다. " +
+  endInfo.floor +
+  "층으로 이동해주세요. 자세한 위치는 해당 건물 지도에서 확인해주세요.";
+
+    }
+
+  }
+
+  else {
+
+    result =
+     result =
+  startInfo.building +
+  "에서 " +
+  endInfo.building +
+  " " +
+  endInfo.floor +
+  "층으로 이동해주세요. 자세한 위치는 해당 건물 지도에서 확인해주세요.";
+
+  }
+
+  document.getElementById("result").innerText =
+    result;
+
+}
+
+</script>
+
+</body>
+</html>
